@@ -1,7 +1,7 @@
 # Use the official lightweight Python image.
 FROM python:3.8
 
-# Allow statements and log messages to immediately appear in the Knative logs
+# Allow statements and log messages to immediately appear in the logs
 ENV PYTHONUNBUFFERED True
 
 EXPOSE 8080
@@ -16,5 +16,5 @@ COPY ../model_pkl ./model_pkl
 RUN pip install -r requirements.txt
 RUN python3.8 -m pip install --upgrade pip
 
-# Run the web service on container startup.
-CMD streamlit run --server.port 8080 app.py
+# Run the web service on container startup, using the PORT environment variable
+CMD streamlit run --server.port $PORT app.py
