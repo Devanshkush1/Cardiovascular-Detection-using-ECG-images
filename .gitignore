@@ -1,0 +1,28 @@
+# Virtual environment
+venv/
+
+# Temporary files
+__pycache__/
+*.pyc
+*.csv
+
+# Large datasets and preprocessed data
+ECG_IMAGES_DATASET/
+Combined1d_csv/
+Final_Dataset/
+preproceed_images/
+preprocessed_1d/
+
+# Documentation and media files
+*.pdf
+docs/
+img/
+video/
+colabs/
+README.md
+
+# System files
+.DS_Store
+*.log
+*.bak
+*.tmp
