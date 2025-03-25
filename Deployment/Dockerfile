@@ -9,8 +9,8 @@ EXPOSE 8080
 # Copy local code to the container image.
 ENV APP_HOME /app
 WORKDIR $APP_HOME
-COPY . ./
-COPY ../model_pkl ./model_pkl
+COPY Deployment/ ./
+COPY model_pkl/ ./model_pkl/
 
 # Install production dependencies.
 RUN pip install -r requirements.txt
