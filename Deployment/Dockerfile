@@ -12,9 +12,15 @@ WORKDIR $APP_HOME
 COPY Deployment/ ./
 COPY model_pkl/ ./model_pkl/
 
-# Install production dependencies.
+# Create and activate a virtual environment
+RUN python3.8 -m venv venv
+ENV PATH="/app/venv/bin:$PATH"
+
+# Upgrade pip in the virtual environment
+RUN pip install --upgrade pip
+
+# Install production dependencies in the virtual environment
 RUN pip install -r requirements.txt
-RUN python3.8 -m pip install --upgrade pip
 
 # Run the web service on container startup, using the PORT environment variable
 CMD streamlit run --server.port $PORT app.py
