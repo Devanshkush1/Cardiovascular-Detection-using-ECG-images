@@ -23,4 +23,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Run the web service on container startup, using the PORT environment variable
-CMD streamlit run --server.port $PORT app.py
+CMD streamlit run --server.port $PORT --server.headless true app.py
